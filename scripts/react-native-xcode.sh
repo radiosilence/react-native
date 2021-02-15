@@ -102,6 +102,11 @@ if [[ ! -x node && -d ${HOME}/.anyenv/bin ]]; then
   fi
 fi
 
+# Set up asdf if present
+if [[ -d "$HOME/.asdf" ]]; then
+  . "$HOME/.asdf/asdf.sh"
+fi
+
 # Path to react-native folder inside node_modules
 REACT_NATIVE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
